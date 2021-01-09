@@ -1,16 +1,44 @@
 body{
-    background-color:grey;
+    background-color:rgb(180, 180, 180);
     text-align: center;
 }
+h1{
+    background-color: rgb(124, 124, 124);
+    padding: 20px;
+}
 table{
-    border: solid 10px;
+    border: solid 5px;
     width: 90%;
 }
 thead{
     border:2px;
 }
-
 td{
     border: solid 2px;
     text-align: center;
+}
+button{
+    border:outset;
+}
+button:focus{
+   outline:none;
+   border:inset
+}
+#employeeInput{
+    margin:30px;
+}
+input{
+    background-color: rgb(185, 185, 185);
+
+}
+input:hover{
+    background-color: rgba(185, 185, 185, 0.267);
+}
+input:focus{
+    outline: none;
+}
+h3{
+    text-align: right;
+    margin: 30px 200px 0px 0px;
+    
 }

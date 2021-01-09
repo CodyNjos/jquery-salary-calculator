@@ -8,17 +8,16 @@ function readyNow() {
 
 let monthlyExpence = 0;
 
-function hireEmployee(){
+function hireEmployee(){ // Adds info from input fields to DOM
     let first = $('#firstNameInput').val();
     let last = $('#lastNameInput').val();
     let id = $('#idInput').val();
     let title = $('#titleInput').val();
     let salary  = $('#salaryInput').val();
-    monthlyExpence += Number(salary / 12);
+    monthlyExpence += Number(salary / 12); //Divide annual salary by 12 to get monthly expence
 
-
-    $('#table').append (`
-        <tr id = 'test'>
+    $('#table').append ( //
+        `<tr id = 'test'>
         <td>${first}</td>
         <td>${last}</td>
         <td>${id}</td>
@@ -38,7 +37,7 @@ function hireEmployee(){
 
 
 function terminateEmployee(){
-    $(this).closest(`tr`).remove();
+    $(this).closest(`tr`).remove(); // Removes the table row that the button is on
 } 
 console.log (monthlyExpence);
 
