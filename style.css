@@ -1,3 +1,16 @@
 body{
     background-color:grey;
+    text-align: center;
+}
+table{
+    border: solid 10px;
+    width: 90%;
+}
+thead{
+    border:2px;
+}
+
+td{
+    border: solid 2px;
+    text-align: center;
 }
