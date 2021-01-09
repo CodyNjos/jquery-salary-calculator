@@ -7,8 +7,9 @@ h1{
     padding: 20px;
 }
 table{
-    border: solid 5px;
-    width: 90%;
+   
+    width: 100%;
+   
 }
 thead{
     border:2px;
@@ -16,6 +17,15 @@ thead{
 td{
     border: solid 2px;
     text-align: center;
+}
+.table_container{
+border: solid 5px;
+min-height: 400px;
+
+}
+
+tr{
+    max-height: min-content;
 }
 button{
     border:outset;
