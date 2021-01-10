@@ -13,11 +13,19 @@ function hireEmployee(){ // Adds info from input fields to DOM
     let id = $('#idInput').val();
     let title = $('#titleInput').val();
     let salary  = $('#salaryInput').val();
+    
+    // UN-COMMENT AFTER TESTING!!
+    
+    /*if(first === '' || last === '' || id === ''|| title === ''|| salary === ''){
+        alert('Please Enter All Employee Information');
+        return false;
+    }*/
+
     annualExpence += Number(salary); //Adds employee salary to annual expense when they're added to the table
-    $('#table').append ( //
-        `<tr id = 'newEmpRow' data-salary="${salary}">
-        <td>${first}</td>
-        <td>${last}</td>
+    $('#table').append ( // uses data from the input fields to add to table on DOM
+        `<tr data-salary="${salary}">
+        <td class = firstName >${first}</td>
+        <td class = lastName>${last}</td>
         <td>${id}</td>
         <td>${title}</td>
         <td class = salary>${salary}</td>
@@ -49,16 +57,22 @@ function updatePayroll() {
 }
 
 function terminateEmployee(){
-    console.log('start terminateEmployee');
-    //let subSalary = $(this).closest(`tr`).find(`.salary`).text();
-    let subSalary = $(this).closest(`tr`).data(`salary`);
-    console.log(subSalary);
-    annualExpence -= subSalary;
-    updatePayroll();
-    
-    $(this).closest(`tr`).remove(); // Removes the table row that the button is on
+    let empFirst = $(this).closest(`tr`).find(`.firstName`).text();
+    let empLast = $(this).closest(`tr`).find(`.lastName`).text();
+    //let subSalary = $(this).closest(`tr`).find(`.salary`).text(); // another way of doing what is on the line below
+    let subSalary = $(this).closest(`tr`).data(`salary`);// target the closest tr with data matching `salary`
+    if (confirm("Do you want to remove " + empFirst + " " + empLast + " from the payroll?")){
+        $(this).closest(`tr`).remove();
+        
+        
+        annualExpence -= subSalary; // subtracts fired employees salary from the annual expence
+        updatePayroll(); // updates payroll on DOM with fired employees salary subtracted
+        alert(empFirst + " " + empLast + " is no longer on the payroll.") // Informs user that the employee has been removed from payroll
+    }
+    else{
+        alert(empFirst + " " + empLast + " is still on the payroll.") // Informs that the selected employee has NOT been removed
+    }
+   // $(this).closest(`tr`).remove(); // Removes the table row that the button is on
 
 } 
-console.log (annualExpence);
 
-$('#payroll').css('color' , 'red');
