@@ -13,8 +13,7 @@ function hireEmployee(){ // Adds info from input fields to DOM
     let id = $('#idInput').val();
     let title = $('#titleInput').val();
     let salary  = $('#salaryInput').val();
-    annualExpence += Number(salary); //Divide annual salary by 12 to get monthly expence
-
+    annualExpence += Number(salary); //Adds employee salary to annual expense when they're added to the table
     $('#table').append ( //
         `<tr id = 'newEmpRow' data-salary="${salary}">
         <td>${first}</td>
@@ -35,8 +34,18 @@ function hireEmployee(){ // Adds info from input fields to DOM
 }
 function updatePayroll() {
     let monthlyExpence = annualExpence/12;
+    
+    if(monthlyExpence > 20000){ // changes text color on DOM to red if the monthly expence is over 20k
+        $('#payroll').css('color' , 'red');
+    }
+    else{
+        $('#payroll').css('color' , 'black'); //reverts back to black if the monthly expence drops below 20k
+    }
+
     $('#payroll').empty() // Empty the span that holds running tally of Montly expence 
     $('#payroll').append(monthlyExpence.toFixed(2));
+    
+    
 }
 
 function terminateEmployee(){
@@ -52,4 +61,4 @@ function terminateEmployee(){
 } 
 console.log (annualExpence);
 
-    
+$('#payroll').css('color' , 'red');
