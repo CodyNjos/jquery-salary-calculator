@@ -35,7 +35,7 @@ function hireEmployee() { // Adds info from input fields to DOM
             <td class = lastName>${last}</td>
             <td>${id}</td>
             <td>${title}</td>
-            <td class = salary>${salary}</td>
+            <td class = salary>$${salary}</td>
             <td><button class = 'fireButton' type =button>Terminate Employee</button></td>
         </tr>`);
 
