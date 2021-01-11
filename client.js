@@ -17,8 +17,16 @@ function hireEmployee(){ // Adds info from input fields to DOM
     
     // UN-COMMENT AFTER TESTING!!
     
-    if(first === '' || last === '' || id === ''|| title === ''|| salary === ''){
-        alert('Please Enter All Employee Information');
+    if(first === '' || last === '' || id === ''|| title === ''|| salary === '' ){
+        alert('Please Enter Valid Employee Information');
+        return false;
+    }
+    else if(id.length > 6){
+        alert('Employee ID Numbers are Limited to 6 digits')
+        return false;
+    }
+    else if(salary > 200000){
+        alert('Maximum Annual Salary is $200,000. \nPlease See Admin if Override is Needed.')
         return false;
     }
 
@@ -68,10 +76,10 @@ function terminateEmployee(){
         $(this).closest(`tr`).remove(); // removes row closest to the buttun that has been pushed
         
         
-        annualexpense -= subSalary; // subtracts removed employees salary from the annual expense
+        annualExpense -= subSalary; // subtracts removed employees salary from the annual expense
         updatePayroll(); // updates payroll on DOM with removed employees salary subtracted
         alert(empFirst + " " + empLast + " is no longer on the payroll.") // Informs user that the employee has been removed from payroll
-        console.log(subSalary + ' removed from annual payroll expense. Annual payroll expense is now $' + annualexpense)
+        console.log(subSalary + ' removed from annual payroll expense. Annual payroll expense is now $' + annualExpense)
     }
     else{
         alert(empFirst + " " + empLast + " is still on the payroll.") // Informs that the selected employee has NOT been removed
