@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,36 +8,38 @@
     <script src="jQuery.js"></script>
     <script src="client.js"></script>
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/jpg" href="calculator.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="calculator.png" />
 </head>
+
 <body>
     <h1> Salary Calculator </h1>
-    <form id = 'employeeInput'>
-        <input id = 'firstNameInput' type="text" placeholder="First Name">
-        <input id = 'lastNameInput' type ="text" placeholder = "Last Name">
-        <input id = 'idInput' type ="number" placeholder ="ID">
-        <input id = 'titleInput' type ="text" placeholder = "Title">
-        <input id = 'salaryInput' type ="number" placeholder = "Annual Salary">
+    <form id='employeeInput'>
+        <input id='firstNameInput' type="text" placeholder="First Name">
+        <input id='lastNameInput' type="text" placeholder="Last Name">
+        <input id='idInput' type="number" placeholder="ID">
+        <input id='titleInput' type="text" placeholder="Title">
+        <input id='salaryInput' type="number" placeholder="Annual Salary">
         <button id=submitButton type=button>Add Employee</button>
     </form>
-    <div class= 'table_container'>
-    <table>
-        <thead>
-            <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Annual Salary</th>
-                <th>-----------</th>
-            </tr>
-        </thead>
-        <tbody id="table">
-            <tr></tr>
-        </tbody>
-    </table>
+    <div class='table_container'>
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Annual Salary</th>
+                    <th>-----------</th>
+                </tr>
+            </thead>
+            <tbody id="table">
+                <tr></tr>
+            </tbody>
+        </table>
     </div>
     <h3>Monthly Payroll: $<span id='payroll'>0.00</span></h3>
     <footer>EDA Week 7 Weekend Assignment</footer>
 </body>
+
 </html>
