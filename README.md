@@ -7,7 +7,7 @@
 By default, the table is empty, and will look like this.
 
 ////SOURCE SCREEN SHOT OF EMPTY TABLE////
-
+![](screenShots/emptyTable.png)
 To enter and employee, simply fill out all the input fields and click 'Add Employee'.
 By default, Employee salary is set to a max of $200,000, and employ ID's are limited to 6 digits. This can be modified if needed.
 
